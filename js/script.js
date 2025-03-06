@@ -1,4 +1,34 @@
+// Changing Day and Date upon loading the page
+function updateDateTime() {
+    const todayName = new Date().toLocaleDateString('en-US', {
+        weekday: 'long',
+    });
+    const date = new Date();
+    const monthNames = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+    ];
 
+    const day = date.getDate();
+    const monthIndex = date.getMonth();
+    const year = date.getFullYear();
+
+    document.getElementById('todayName').innerText = todayName;
+    document.getElementById(
+        'todayDate',
+    ).innerText = `${monthNames[monthIndex]} ${day} ${year}`;
+}
+updateDateTime();
 function changeBackground() {
     const colors = [
         '#FF6633',
@@ -57,6 +87,7 @@ function changeBackground() {
 
 function clearHistory() {
     document.getElementById('activityLog').innerHTML = '';
+    document.getElementById('clearHistoryBtn').setAttribute('disabled', true);
 }
 
 function completeTask(event) {
@@ -72,12 +103,33 @@ function completeTask(event) {
             // Adding the task to the activity log
             const activityLog = document.getElementById('activityLog');
             const newActivity = document.createElement('div');
-            newActivity.classList.add('bg-bgcolor', 'px-4', 'py-2', 'mb-4', 'rounded-lg');
-            newActivity.innerHTML = 'You have completed the task <u>' + taskTitleText + '</u> at ' + new Date().toLocaleTimeString();
+            newActivity.classList.add(
+                'bg-bgcolor',
+                'px-4',
+                'py-2',
+                'mb-4',
+                'rounded-lg',
+            );
+            newActivity.innerHTML =
+                'You have completed the task <u>' +
+                taskTitleText +
+                '</u> at ' +
+                new Date().toLocaleTimeString();
             activityLog.appendChild(newActivity);
+            const taskCounter = document.getElementById('taskCounter');
+            taskCounter.innerText = parseInt(taskCounter.innerText) + 1;
+            const pendingTask = document.getElementById('pendingTask');
+            const pendingTaskNumber = parseInt(pendingTask.innerText);
+            pendingTask.innerText = pendingTaskNumber - 1;
 
             // Disabling the button
             dom.setAttribute('disabled', true);
+            document.getElementById('clearHistoryBtn').removeAttribute('disabled', true);
+
+            alert('Board Updated Successfully');
+            if (pendingTaskNumber === 1) {
+                alert('Congrats!! You have completed all the current tasks');
+            }
         } else {
             console.error('Could not find taskTitle!');
         }

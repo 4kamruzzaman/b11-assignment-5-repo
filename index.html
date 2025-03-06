@@ -38,7 +38,7 @@
             <div class="flex gap-4 md:gap-7 items-center">
                 <div class="flex items-center gap-3 bg-bgcolor px-3 py-1 rounded-2xl">
                     <img class="h-6" src="./assets/checkbox.png" alt="Completed Tasks Counter" />
-                    <span class="font-bold text-2xl">23</span>
+                    <span class="font-bold text-2xl" id="taskCounter">23</span>
                 </div>
                 <img class="h-10 p-2 bg-bgcolor rounded-full cursor-pointer active:rotate-360 duration-150 ease-in-out"
                     onclick="changeBackground()" alt="Change Background Color" src="./assets/theme-btn.png"
@@ -60,7 +60,7 @@
                         <div class="font-medium">
                             Task Assigned
                             <br />
-                            <span class="font-bold text-xl" id="task-assigned">5</span>
+                            <span class="font-bold text-xl" id="pendingTask">6</span>
                         </div>
                     </div>
                     <a class="md:col-span-2 bg-linear-to-r from-blue via-53% to-[#9BA8F8] text-white p-4 rounded-xl flex items-center justify-center gap-4"
@@ -75,9 +75,9 @@
                             <img class="w-11 p-3" src="./assets/calender.png" alt="Calender" />
                         </div>
                         <div class="font-medium">
-                            Friday,
+                            <span id="todayName">undefined</span>,
                             <br />
-                            <span class="font-bold text-xl" id="task-assigned">Mar 05 2025</span>
+                            <span class="font-bold text-xl" id="todayDate">undefined</span>
                         </div>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                         <div><span class="bg-base-100 py-1.5 px-4 rounded-lg">SwiftPay</span></div>
                         <h2 class="font-medium text-xl" id="taskTitle">Optimize  Home page</h2>
                         <p class="-mt-1 bg-base-100 py-1.5 px-4 rounded-lg line-clamp-2 max-h-20 text-base/relaxed">
-                            Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works properly and ensure onClick works properly.
+                            Optimize images, minify CSS and JavaScript, and leverage browser caching to reduce page load times.
                         </p>
                         <div class="border-t-2 border-[#9ba7f83a] border-dashed"></div>
                         <div class="flex justify-between items-center gap-4">
@@ -154,7 +154,7 @@
                         <div><span class="bg-base-100 py-1.5 px-4 rounded-lg">Meta</span></div>
                         <h2 class="font-medium text-xl" id="taskTitle">Add new emoji 🤲</h2>
                         <p class="-mt-1 bg-base-100 py-1.5 px-4 rounded-lg line-clamp-2 max-h-20 text-base/relaxed">
-                            XXXXXXXXXXX
+                            Implement the new emoji in the app's chat interface, update the emoji picker, and ensure it's supported across all devices and platforms.
                         </p>
                         <div class="border-t-2 border-[#9ba7f83a] border-dashed"></div>
                         <div class="flex justify-between items-center gap-4">
@@ -175,7 +175,7 @@
                         <div><span class="bg-base-100 py-1.5 px-4 rounded-lg">Google LLC</span></div>
                         <h2 class="font-medium text-xl" id="taskTitle">Integrate OpenAI API</h2>
                         <p class="-mt-1 bg-base-100 py-1.5 px-4 rounded-lg line-clamp-2 max-h-20 text-base/relaxed">
-                            XXXXXXXXXXXXXXXXXX
+                            Integrate the OpenAI API to provide more relevant job recommendations, improve search accuracy, and personalize the user experience.
                         </p>
                         <div class="border-t-2 border-[#9ba7f83a] border-dashed"></div>
                         <div class="flex justify-between items-center gap-4">
@@ -196,7 +196,7 @@
                         <div><span class="bg-base-100 py-1.5 px-4 rounded-lg">Glass Door</span></div>
                         <h2 class="font-medium text-xl" id="taskTitle">Improve Job searching</h2>
                         <p class="-mt-1 bg-base-100 py-1.5 px-4 rounded-lg line-clamp-2 max-h-20 text-base/relaxed">
-                            XXXXXXXXXX
+                            Refactor search filters, enhance result ranking algorithms, and implement real-time updates for new job postings.
                         </p>
                         <div class="border-t-2 border-[#9ba7f83a] border-dashed"></div>
                         <div class="flex justify-between items-center gap-4">
@@ -220,10 +220,10 @@
                     <div class="flex justify-center items-center font-medium text-xl gap-2 p-4">
                         <img class="h-5" src="./assets/activity.png" alt="Activity Log"> Activity Log
                     </div>
-                    <button class="btn btn-warning rounded-lg" onclick="clearHistory()">Clear History</button>
+                    <button class="btn btn-warning rounded-lg" onclick="clearHistory()" id="clearHistoryBtn" disabled>Clear History</button>
                 </div>
                 <div class="border-t-2 border-[#9ba7f83a] border-dashed mt-6"></div>
-                <div class="p-4 space-y-4" id="activityLog"></div>
+                <div class="text-sm p-4 space-y-4" id="activityLog"></div>
             </div>
     </section>
 
