@@ -53,7 +53,13 @@
             </h2>
             <div class="border-t-2 border-[#9ba7f83a] border-dashed -mt-4 m-0"></div>
             <p class="p-4">
-                fdgfdg
+                Like, if you know the ID, you do <code>document.getElementById('theId')</code>. Easy peasy.
+                <br><br>
+                Or, if you wanna grab something by its class, you can use <code>document.querySelector('.theClass')</code>. That gets the FIRST one.
+                <br><br>
+                If you want ALL of them with that class, it's <code>document.querySelectorAll('.theClass')</code>. That gives you like, a list of them.
+                <br><br>
+                And there's also <code>document.getElementsByTagName('p')</code> to get all the &lt;p&gt; tags. You get the idea.
             </p>
         </div>
         <!-- Blog 2 -->
@@ -63,19 +69,11 @@
             </h2>
             <div class="border-t-2 border-[#9ba7f83a] border-dashed -mt-4 m-0"></div>
             <p class="p-4">
-                <p class="p-4">
-                    <b>innerHTML</b>: Think of it as the whole package! It gives you everything inside an element, 
-                    <br>
-                    <ins>including</ins> HTML tags, visible text, hidden text, and even CSS styles that are directly within the element.
-                    <br><br>
-                    <b>innerText</b>: This one's more selective. It gives you only the <mark>visible</mark> text content of an element, 
-                    <br>
-                    <ins>excluding</ins> HTML tags, hidden text (text hidden with CSS), and CSS styles. What you see is what you get!
-                    <br><br>
-                    <b>textContent</b>: This is the most inclusive text getter. It gives you <ins>all</ins> the text content within an element,
-                    <br>
-                     <ins>including</ins> text that's hidden with CSS, but <ins>excluding</ins> HTML tags and CSS styles.
-                </p>
+                innerHTML = Gives all things that under a element. Like tags, text, CSS etc.
+                <br>
+                innerText = It gives only the text that are visible except the hidden text, Tags, CSS etc.
+                <br>
+                textContent = It gives all the text that are under a element including hidden text, Tags, CSS etc.
             </p>
         </div>
         <!-- Blog 3 -->
@@ -105,7 +103,11 @@
             </h2>
             <div class="border-t-2 border-[#9ba7f83a] border-dashed -mt-4 m-0"></div>
             <p class="p-4">
-                fdgfdg
+                Create: To create a new element, <code>document.createElement('div')</code> can be use. 'div' can be replaced with any tag name.
+                <br><br>
+                Add: This helps to adding attribute to an element. E.g. <code>parentElement.appendChild(theNewThing)</code>
+                <br><br>
+                Remove: This can be used for remove/delete an element. E.g. <code>element.remove()</code>. It will be removed from the DOM.
             </p>
         </div>
 
