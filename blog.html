@@ -53,13 +53,15 @@
             </h2>
             <div class="border-t-2 border-[#9ba7f83a] border-dashed -mt-4 m-0"></div>
             <p class="p-4">
-                Like, if you know the ID, you do <code>document.getElementById('theId')</code>. Easy peasy.
+                There are a few ways to select elements in the DOM.
                 <br><br>
-                Or, if you wanna grab something by its class, you can use <code>document.querySelector('.theClass')</code>. That gets the FIRST one.
-                <br><br>
-                If you want ALL of them with that class, it's <code>document.querySelectorAll('.theClass')</code>. That gives you like, a list of them.
-                <br><br>
-                And there's also <code>document.getElementsByTagName('p')</code> to get all the &lt;p&gt; tags. You get the idea.
+                <code>document.getElementById('idName')</code>
+                <br>
+                <code>document.querySelector('.className')</code>
+                <br>
+                <code>document.querySelectorAll('.theClass')</code>
+                <br>
+                <code>document.getElementsByTagName('p')</code>
             </p>
         </div>
         <!-- Blog 2 -->
@@ -83,7 +85,11 @@
             </h2>
             <div class="border-t-2 border-[#9ba7f83a] border-dashed -mt-4 m-0"></div>
             <p class="p-4">
-                fdgfdg
+                Event delegation helps for handling dynamic content in the DOM (Document Object Model). It helps to
+                reduce the number of event listeners. It works like a parent-child relationship. When a child element is
+                clicked then it will hit the parent element. It can be done by using <code>event.target</code>. It will
+                help to find the target element. It can be used for a single event listener for multiple elements. It
+                helps to improve the performance of the website.
             </p>
         </div>
         <!-- Blog 4 -->
@@ -93,7 +99,7 @@
             </h2>
             <div class="border-t-2 border-[#9ba7f83a] border-dashed -mt-4 m-0"></div>
             <p class="p-4">
-                fdgfdg
+                Event bubbling works like a bottom to up in the DOM (Document Object Model). When a child element triggered then it will hit the parent element and then hit the body element. Like a tree. It's called event bubbling. It can be stop by using <code>event.stopPropagation()</code>. It will stop the event bubbling.
             </p>
         </div>
         <!-- Blog 5 -->
@@ -103,11 +109,14 @@
             </h2>
             <div class="border-t-2 border-[#9ba7f83a] border-dashed -mt-4 m-0"></div>
             <p class="p-4">
-                Create: To create a new element, <code>document.createElement('div')</code> can be use. 'div' can be replaced with any tag name.
+                <u>Create</u>: To create a new element, <code>document.createElement('div')</code> can be use. 'div' can
+                be replaced with any tag name.
                 <br><br>
-                Add: This helps to adding attribute to an element. E.g. <code>parentElement.appendChild(theNewThing)</code>
+                <u>Add</u>: This helps to adding attribute to an element. E.g.
+                <code>parentElement.appendChild(theNewThing)</code>
                 <br><br>
-                Remove: This can be used for remove/delete an element. E.g. <code>element.remove()</code>. It will be removed from the DOM.
+                <u>Remove</u>: This can be used for remove/delete an element. E.g. <code>element.remove()</code>. It
+                will be removed from the DOM.
             </p>
         </div>
 
